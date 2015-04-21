@@ -1,0 +1,13 @@
+unified_main_map_api:
+    resource: "@UnifiedMainBundle/Controller/MapRESTController.php"
+    type:   rest
+    prefix:   /api
+
+unified_main:
+    resource: "@UnifiedMainBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+NelmioApiDocBundle:
+  resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+  prefix:   /api/doc
