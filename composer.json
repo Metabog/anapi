@@ -36,14 +36,18 @@
     },
     "scripts": {
         "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Braincrafted\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::install"
         ],
         "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Braincrafted\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::install"
         ]
     },
     "config": {
@@ -55,6 +59,17 @@
         "symfony-web-dir": "web",
         "branch-alias": {
             "dev-master": "2.3-dev"
+        },
+        "incenteev-parameters": {
+            "env-map":{
+                "database_port" : "SYMFONY_DBPORT",
+                "database_host" : "SYMFONY_DBHOST",
+                "database_user" : "SYMFONY_DBUSER",
+                "database_password" : "SYMFONY_DBPASSWORD",
+                "database_name" : "SYMFONY_DBNAME"
+            },
+            "file": "app/config/parameters.yml",
+            "keep-outdated": true
         }
     }
 }
