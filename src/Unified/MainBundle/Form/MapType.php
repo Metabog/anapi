@@ -15,8 +15,6 @@ class MapType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('prettyName')
-            ->add('slug')
             ->add('mapData')
         ;
     }

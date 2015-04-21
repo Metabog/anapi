@@ -38,7 +38,7 @@ class Map
     {
         return $this->id;
     }
-    
+
 
     /**
      * Set mapData
